@@ -18,19 +18,19 @@ const webpackConfigProd = {
     publicPath: './',
   },
   plugins: [
-    // 定义环境变量为开发环境
+    // 定义环境变量为开发环 境
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify('testing'),
       IS_DEVELOPMETN: false,
     }),
-    // 将打包后的资源注入到html文件内    
+    // 将打包后的资源注入到html文件内
     new HtmlWebpackPlugin({
       // inject: true, // will inject the main bundle to index.html
       template: resolve('../app/index.html'),
       // mapConfig:'http://192.168.0.1/map_config.js', 注释不用dll
       // 这里列出要加入html中的js文件
       dlls: [
-        // './resource/dll/vendor.dll.js', 
+        // './resource/dll/vendor.dll.js',
         // './resource/dll/redux.dll.js',
       ],
     }),
